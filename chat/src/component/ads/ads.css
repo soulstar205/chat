@@ -1,0 +1,11 @@
+.ad-section{
+    background-color: #484d79;
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3
+    
+}
+.ad-section .ad-1{height: 50%; width: 100%}
+.ad-section .ad-2{height: 50%; width: 100%}

@@ -1,0 +1,110 @@
+.chat-invites{
+    background:#5d5d8a;
+    grid-row-start: 1;
+    grid-row-end:4;
+    justify-content:space-around;
+    color:#cac8ee;
+    height: 100vh;
+}
+.logo{
+    height: 25%; 
+    width: 100%; 
+    background: #dcddf5;
+    border-bottom: 1px #3e3e5e solid;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo .logo-right{
+    margin-left: 70%;
+}
+.logo .logo-left{
+    margin-left: 5%;
+    color: #3e3e5e
+}
+.chat-invites .profile{ height: 22%; width: 100%; border-radius: 2px; }
+.chat-invites .invitations{height: 65%; width: 100%; flex-grow:1;overflow-y:scroll;position:relative; background: whitesmoke ; border-radius: 2px;}
+.chat-invites .invitations::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3);background-color:#cac8ee}
+.chat-invites .invitations::-webkit-scrollbar{width:5px;background-color:green}
+.chat-invites .invitations::-webkit-scrollbar-thumb{background-color:#484d79}
+.chat-invites .invite-input{height: 10%; width: 100%;}
+.invite-plus-photo-area{display: flex; margin-left: 3%; align-items: center;}
+.chat-iv-user-photo{height: 40px; width: 40px;  border-radius: 50%; }
+.chat-invite-message-form{height:50px;width:330px;display:flex;justify-content:space-between; padding: 10px; border-radius: 5px; }
+.invitee{width: 85%; border-radius:5px;border-top-left-radius:0;box-sizing:border-box;height:fit-content;padding:5px 15px;position:relative;display: grid; cursor: pointer; grid-gap:3px; margin-left: 5px; color:#3e3e5e; font-weight: lighter;font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif }@keyframes show{0%{opacity:0}100%{opacity:1}}
+.username{color: black; font-family: 'Franklin Gothic Medium'; float: left;}
+.chat-iv{background:#3e3e5e;border-width:1px 0;border-style:solid;border-color:black;height:1vh;}
+.send{ border-radius: 2px;width:100%;box-sizing:border-box;font-size:1.25em;text-align:center;border:none;height:100%;color:#fff;background:#3e3e5e;transition:all .35s ease-out}
+.user-profile{
+    display: flex;
+    background: whitesmoke;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    height: 100px;
+
+ }
+.user-profile .profile-pic-div{ 
+    width: 50%; 
+    height: 100%; 
+    display: flex;  
+    justify-content: flex-start; 
+    align-items: center;
+
+}
+.user-profile  .name-friends{
+    color: black; 
+    font-family: 'Franklin Gothic Medium';
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-end  
+}
+.user-profile .profile-pic{ height: 70px; width: 70px; border-radius: 50%; margin-right: 10px; margin-left: 15px}
+
+.user-profile .edit-profile{color: rgb(2, 67, 151); align-self: flex-end; margin-right: 3px; }
+
+
+.tooltip{
+    position: relative;
+}
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color:#484d79;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: 5px;
+    right: 10%;
+    z-index: 0.1;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif ;
+    font-weight: lighter;
+}
+.tooltip .tooltiptext-icons{
+    visibility: hidden;
+    width: fit-content;
+    background-color:#484d79;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: 20px;
+    right: 10%;
+    z-index: 0.1;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif ;
+    font-weight: lighter;
+}
+.tooltip:hover .tooltiptext-icons{
+    visibility: visible;
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+.icons{
+    margin-right: 40px;
+}

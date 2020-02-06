@@ -11,28 +11,43 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
+const getVisitors =()=>{
+    let clients = io.sockets.clients().connected
+    let sockets = Object.values(clients)
+    let users = sockets.map(s => s.user)
+    return users
+}
+const emitVisitors =()=>{
+    io.emit('visitors', getVisitors())
+}
+
 io.on('connection', (socket)=>{
+    
 
-    socket.on('join', ({name, room}, callback)=>{
-        const {error, user} = addUser({ id: socket.id, name, room})
+    socket.on('join', (user, callback)=>{
+        console.log(user)
+        socket.user = user
 
-
-        if(error) return callback(error)
-
-        socket.emit('message', {user: 'Bot', text: `${user.name},  Welcoome to the room ${user.room} `})
-        socket.broadcast.to(user.room).emit('message', {user: 'Bot', text: `${user.name}, has joined`})
-
-        socket.join(room)
-
-        callback()
+        socket.on('join_room', room=>{
+            socket.join(room)
+            console.log("user has joined", room)
+        })
     })
 
-    socket.on('sendMessage', (message, callback) => {
-       const user = getUser(socket.id)
-
-        io.to(user.room).emit('message', {user: user.name, text: message})
+    socket.on('send_messages', ({activeRoom, messages})=>{
         
-        callback()
+        io.to(activeRoom).emit('send_messages',({
+            messages, 
+            name: "soul"
+        }))
+        console.log(activeRoom, messages)
+        
+    })
+    socket.on('invitations', ({activeRoom, invitations})=>{
+        io.to(activeRoom).emit('send_messages', ({
+            invitations
+        }))
+        console.log(activeRoom, invitations)
     })
 
     socket.on('disconnect', ()=>{
